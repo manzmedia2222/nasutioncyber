@@ -1,127 +1,91 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#08090d">
-  <title>Website Telah Diretas — xX_M4nz_Xx</title>
-  <style>
-    :root { color-scheme: dark; --red:#e63946; --muted:#9298a5; }
-    * { box-sizing:border-box; }
-    body {
-      margin:0; min-height:100vh; display:grid; place-items:center; padding:28px 16px;
-      background:
-        linear-gradient(rgba(5,6,10,.62), rgba(5,6,10,.78)),
-        url("https://i.ibb.co.com/0VCt131g/Whats-App-Image-2026-11-12-at-16-12-00.jpg") center center / cover fixed no-repeat;
-      color:#f5f6f8; font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
-    }
-    .shell { width:min(920px,100%); }
-    .panel {
-      overflow:hidden; border:1px solid #343844; border-radius:20px;
-      background:linear-gradient(145deg,rgba(22,24,32,.97),rgba(9,10,15,.98));
-      box-shadow:0 28px 90px rgba(0,0,0,.62),0 0 36px rgba(230,57,70,.08);
-    }
-    header { display:flex; align-items:center; gap:15px; padding:22px 26px; border-bottom:1px solid #2c303a; }
-    .logo { width:58px;height:58px;flex:0 0 58px;object-fit:cover;border-radius:13px;border:1px solid #555b68; }
-    .brand { min-width:0; }
-    .brand small { display:block; color:#aab0bc; font-size:10px; letter-spacing:.22em; text-transform:uppercase; margin-bottom:5px; }
-    .brand strong { font-size:clamp(17px,3vw,22px); letter-spacing:.08em; }
-    .tag { margin-left:auto; border:1px solid rgba(255,70,85,.65); color:#ff8790; background:rgba(230,57,70,.15); padding:9px 12px; border-radius:7px; font-size:9px; font-weight:800; letter-spacing:.12em; white-space:nowrap; }
-    main { padding:30px clamp(18px,4vw,38px) 28px; }
-    .headline { text-align:center; margin-bottom:24px; }
-    .lock { width:46px;height:46px; margin:0 auto 13px; display:grid;place-items:center; border:1px solid rgba(230,57,70,.42);border-radius:14px;color:#080808;background:rgba(230,57,70,.08); }
-    .lock svg { width:23px;height:23px; }
-    h1 { margin:0; color:#ff4655; font-size:clamp(25px,5vw,43px); line-height:1.12; letter-spacing:.055em; font-weight:900; text-transform:uppercase; text-shadow:0 0 22px rgba(230,57,70,.24); }
-    .subtitle { color:#e0e2e8;font-size:clamp(13px,2vw,15px);line-height:1.8;margin:14px auto 0;max-width:590px; }
-    .headline { text-align:center; margin-bottom:24px; padding:25px 18px 22px; border:1px solid rgba(230,57,70,.34); border-radius:15px; background:linear-gradient(135deg,rgba(115,13,24,.22),rgba(12,13,19,.72)); }
-    .lock { width:54px;height:54px; margin:0 auto 16px; border:1px solid rgba(255,70,85,.62); color:#ff4655; background:rgba(230,57,70,.13); box-shadow:0 0 28px rgba(230,57,70,.13); }
-    .image-frame { display:none; }
-    .caption { display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:13px;color:#ff9aa1;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase; }
-    footer { display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:17px 26px;border-top:1px solid #2c303a;color:#777e8b;font-size:10px;letter-spacing:.12em; }
-    .signature { color:#e8e9ed; }
-
-    .redirect-notice {
-      display:flex; flex-direction:column; align-items:center; gap:7px;
-      margin-top:20px; padding:15px 16px; text-align:center;
-      border:1px solid #454955; border-radius:10px;
-      background:rgba(7,8,12,.78); color:#d5d8df; font-size:12px; line-height:1.5;
-    }
-    .redirect-label { color:#ff9aa1; font-size:9px; font-weight:800; letter-spacing:.16em; }
-    .redirect-notice a { color:#fff; text-decoration:underline; text-underline-offset:3px; }
-    .redirect-notice #countdown { color:#aeb4c0; font-size:11px; }
-    .redirect-notice .continue-link { margin-top:4px; padding:8px 13px; border:1px solid #626875; border-radius:6px; text-decoration:none; }
-
-    @media(max-width:520px) {
-      header { padding:17px;gap:11px; }
-      .logo { width:48px;height:48px;flex-basis:48px; }
-      .tag { font-size:8px;padding:7px 8px; }
-      main { padding-top:25px; }
-      footer { padding:15px 17px; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#08090d">
+<title>Screen Web — Simulasi</title>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;min-height:100%;background:#08090d;color:#f4f5f7;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+  body{overflow:hidden}
+  .topbar{height:42px;display:flex;align-items:center;gap:10px;padding:0 14px;background:#11131a;border-bottom:1px solid #303440;font-size:12px;color:#d9dce3}
+  .dot{width:8px;height:8px;border-radius:50%;background:#70c58b}
+  .address{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#b9bfca}
+  .viewport{height:calc(100vh - 42px);position:relative;background:#08090d}
+  #siteFrame{width:100%;height:100%;border:0;display:block;background:#fff}
+  .frame-fallback{display:none;position:absolute;inset:0;place-items:center;padding:24px;text-align:center;color:#d9dce3;background:#10131b}
+  .frame-fallback a{color:#fff}
+  .notice{position:absolute;inset:0;display:grid;place-items:center;padding:22px;background:rgba(0,0,0,.18);opacity:0;visibility:hidden;transition:opacity .45s ease,visibility .45s ease;pointer-events:none}
+  .notice.show{opacity:1;visibility:visible;pointer-events:auto}
+  .panel{width:min(560px,100%);border:1px solid #454955;border-radius:14px;background:rgba(10,11,16,.97);box-shadow:0 24px 90px rgba(0,0,0,.62);overflow:hidden}
+  .panel-head{display:flex;align-items:center;gap:13px;padding:16px 19px;border-bottom:1px solid #30343e}
+  .logo{width:48px;height:48px;border-radius:10px;object-fit:cover;border:1px solid #555b68}
+  .identity{min-width:0}
+  .eyebrow{font-size:9px;letter-spacing:.2em;color:#aab0bc;text-transform:uppercase;margin-bottom:4px}
+  .name{font-size:17px;font-weight:800;letter-spacing:.08em}
+  .status{margin-left:auto;border:1px solid #a33b45;color:#ff9aa1;padding:7px 9px;border-radius:5px;font-size:9px;letter-spacing:.1em;white-space:nowrap}
+  .panel-body{padding:25px 22px 21px;text-align:center}
+  .lock{width:46px;height:46px;margin:0 auto 15px;border:1px solid #a33b45;border-radius:11px;display:grid;place-items:center;color:#ff6874}
+  .lock svg{width:22px;height:22px}
+  h1{font-size:clamp(24px,5vw,37px);line-height:1.15;margin:0;color:#f4f5f7;letter-spacing:.035em}
+  .message{font-size:13px;line-height:1.8;color:#d2d5dc;max-width:450px;margin:13px auto 0}
+  .sim-label{display:inline-block;margin-top:17px;padding:6px 9px;border:1px solid #555b68;border-radius:4px;color:#c5cad3;font-size:9px;letter-spacing:.13em}
+  .panel-foot{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:13px 19px;border-top:1px solid #30343e;color:#a0a6b2;font-size:9px;letter-spacing:.12em}
+  @media(max-width:520px){.panel-head{padding:13px}.panel-body{padding:22px 17px}.status{font-size:8px;padding:6px}.name{font-size:15px}}
+</style>
 </head>
 <body>
-  <div class="shell">
-    <section class="panel" aria-label="Halaman akses terbatas">
-      <header>
-        <img class="logo" src="https://i.ibb.co.com/TD2sn9cJ/ab67616d0000b2737acc30db3713f1648cfae3ac.jpg" alt="Logo">
-        <div class="brand">
-          <small>UNAUTHORIZED ACCESS NOTICE</small>
-          <strong>xX_M4nz_Xx</strong>
-        </div>
-        <span class="tag">● SYSTEM COMPROMISED</span>
-      </header>
-      <main>
-        <div class="headline">
+  <div class="topbar">
+    <span class="dot"></span>
+    <span>LIVE WEBSITE PREVIEW</span>
+  </div>
+  <main class="viewport">
+    <iframe id="siteFrame" src="https://nasutioncyber.edgeone.app/" title="Pratinjau situs eksternal" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    <div class="frame-fallback" id="fallback">
+      <div>
+        <h2>Pratinjau tidak dapat dimuat</h2>
+        <p>Situs tujuan mungkin melarang pemuatan di dalam iframe.</p>
+        <a href="https://nasutioncyber.edgeone.app/" target="_blank" rel="noopener noreferrer">Buka situs tujuan di tab baru</a>
+      </div>
+    </div>
+    <section class="notice" id="notice" aria-label="Simulasi pemberitahuan keamanan">
+      <div class="panel">
+        <header class="panel-head">
+          <img class="logo" src="https://i.ibb.co.com/TD2sn9cJ/ab67616d0000b2737acc30db3713f1648cfae3ac.jpg" alt="Logo">
+          <div class="identity">
+            <div class="eyebrow">Security display simulation</div>
+            <div class="name">xX_M4nz_Xx</div>
+          </div>
+          <span class="status">SIMULATION</span>
+        </header>
+        <div class="panel-body">
           <div class="lock" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="4" y="10" width="16" height="11" rx="2"/>
-              <path d="M8 10V7a4 4 0 0 1 8 0v3"/>
-              <path d="M12 14v3"/>
+              <rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><path d="M12 14v3"/>
             </svg>
           </div>
           <h1>WEBSITE TELAH DIRETAS</h1>
-          <p class="subtitle">Situs web ini telah diambil alih. Seluruh aktivitas pada halaman ini berada di bawah kendali xX_M4nz_Xx.</p>
+          <p class="message">Tampilan ini merupakan simulasi visual untuk demonstrasi. Tidak ada perubahan atau akses tidak sah yang dilakukan pada situs tujuan.</p>
+          <span class="sim-label">DEMO / VISUAL EFFECT</span>
         </div>
-
-        <div class="redirect-notice" role="status" aria-live="polite">
-          <span class="redirect-label">PENGALIHAN HALAMAN</span>
-          <span>Anda akan diarahkan ke situs tujuan:</span>
-          <a href="https://nasutioncyber.edgeone.app/" id="destination">nasutioncyber.edgeone.app</a>
-          <span id="countdown">Melanjutkan dalam 2 detik…</span>
-          <a class="continue-link" href="https://nasutioncyber.edgeone.app/">Lanjutkan sekarang</a>
-        </div>
-        <div class="caption">
-          <span>SECURITY STATUS: COMPROMISED</span>
-          <span>ACCESS: UNAUTHORIZED</span>
-        </div>
-      </main>
-      <footer>
-        <span>SITE STATUS: HACKED</span>
-        <span class="signature">CLAIMED BY: xX_M4nz_Xx</span>
-      </footer>
+        <footer class="panel-foot">
+          <span>STATUS: SIMULASI</span>
+          <span>IDENTITAS: xX_M4nz_Xx</span>
+        </footer>
+      </div>
     </section>
-  </div>
+  </main>
+<script>
+  // Show the clearly labeled demo overlay after the visitor has had 2 seconds
+  // to view and scroll the embedded page.
+  window.setTimeout(() => document.getElementById("notice").classList.add("show"), 2000);
 
-  <script>
-    (() => {
-      const target = "https://nasutioncyber.edgeone.app/";
-      let remaining = 2;
-      const label = document.getElementById("countdown");
-      const tick = () => {
-        if (label) label.textContent = remaining > 0
-          ? `Melanjutkan dalam ${remaining} detik…`
-          : "Membuka situs tujuan…";
-        if (remaining <= 0) {
-          window.location.href = target;
-          return;
-        }
-        remaining -= 1;
-        window.setTimeout(tick, 1000);
-      };
-      window.setTimeout(tick, 0);
-    })();
-  </script>
-
+  // Some sites block iframe embedding. This message is a fallback, not a bypass.
+  const frame = document.getElementById("siteFrame");
+  frame.addEventListener("error", () => {
+    document.getElementById("fallback").style.display = "grid";
+  });
+</script>
 </body>
 </html>
